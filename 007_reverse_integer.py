@@ -12,6 +12,7 @@
 
 # For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
+#in this case python handles overflows
 class Solution(object):
     def reverse(self, x):
         """
@@ -33,5 +34,5 @@ class Solution(object):
 
 
 sol = Solution()
-x = -54321
+x = 10000000003
 sol.reverse(x)
