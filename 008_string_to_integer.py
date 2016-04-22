@@ -5,9 +5,13 @@
 # Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
 
 class Solution(object):
-    def myAtoi(self, str):
+    def myAtoi(self, s):
         """
         :type str: str
         :rtype: int
         """
-        
+        print "test %d" %s
+
+sol = Solution()
+s = "happy"
+sol.myAtoi(s)
