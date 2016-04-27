@@ -6,6 +6,9 @@
 # Because nums[0] + nums[1] = 2 + 7 = 9,
 # return [0, 1].
 
+# assumed that list is not sorted in any way
+# if list was sorted, we can look at two consecutive numbers and ommitt the numbers
+# after it if they add to bigger than the target
 class Solution(object):
     def twoSum(self, nums, target):
         """

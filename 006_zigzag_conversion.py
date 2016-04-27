@@ -16,4 +16,33 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
-        
+        rows = ["" for x in range(numRows)]
+        count = 0
+        start = 0
+        end = numRows
+        inc = 1
+
+        # while we dont run out of letters
+        while count < len(s):
+            # count from index 0 -> numRows
+            for i in range(start, end, inc):
+                if count < len(s):
+                    rows[i] += s[count]
+                    count += 1
+
+            if inc == 1:
+                inc = -1
+                start = numRows-2
+                end = 0
+            else:
+                inc = 1
+                start = 0
+                end = numRows
+        print rows
+        return "".join(rows)
+            
+
+sol = Solution()
+s = "PAYPALISHIRING"
+numRows = 3
+sol.convert(s, numRows)

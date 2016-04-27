@@ -12,10 +12,27 @@
 
 # For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
+#in this case python handles overflows
 class Solution(object):
     def reverse(self, x):
         """
         :type x: int
         :rtype: int
         """
-        
+        ans = ''
+        value = 10
+
+        if x < 0:
+            ans += '-'
+            x *= -1
+
+        while x != 0:
+            ans += str(x % value)
+            x /= value
+            
+        print ans
+
+
+sol = Solution()
+x = 10000000003
+sol.reverse(x)
