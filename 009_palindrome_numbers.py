@@ -17,4 +17,26 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+
+        if x < 0:
+            return False
+
+        div = 1
+        while x / div >= 10:
+            div *= 10
         
+        while x != 0:
+            l = x / div
+            r = x % 10
+            if l != r:
+                return False
+            x = (x % 10) / 10
+            div /= 100
+
+        return True
+
+test1 = 1221
+test2 = 2234
+sol = Solution()
+print sol.isPalindrome(test1)
+print sol.isPalindrome(test2)
