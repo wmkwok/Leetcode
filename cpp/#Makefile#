@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -o
+LDFLAGS = -o
+
+all: clean prog
+
+prog: tut.o
+	$(CC) $(LDFLAGS) $@ $^
+
+%.o: %.cpp
+	$(CC) -c $<
+
+clean:
+        rm -f *~ *o *#
