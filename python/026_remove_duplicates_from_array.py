@@ -8,15 +8,11 @@
 # Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
 
 class Solution():
-    def __init__(self, array):
-        self.array = array
-
-    def solve(self):
+    def removeDuplicates(self, arr):
         i = 0
         j = 1
-        arr = self.array
 
-        while j < len(arr):
+        while (i+1) < len(arr) and j < len(arr):
             if arr[i] == arr[j]:
                 j += 1
             elif arr[i] < arr[j]:
@@ -26,4 +22,3 @@ class Solution():
                 j += 1
 
         return i + 1
-
