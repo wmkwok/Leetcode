@@ -13,4 +13,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        
+        end = 0
+        for i in range(1, len(nums)):
+            if nums[i] != nums[end]:
+                end += 1
+            if i != end:
+                nums[end] = nums[i]
+        size = end + 1
+        end += 1
+        while end < len(nums):
+            nums[end] = None
+            end += 1
+        print nums
+        return size
+
+sol = Solution()
+test = [1, 1, 2 ,3, 4]
+print sol.removeDuplicates(test)

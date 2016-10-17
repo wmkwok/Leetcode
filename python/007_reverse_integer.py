@@ -18,4 +18,20 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        
+        ans = ''
+        value = 10
+
+        if x < 0:
+            ans += '-'
+            x *= -1
+
+        while x != 0:
+            ans += str(x % value)
+            x /= value
+            
+        print ans
+
+
+sol = Solution()
+x = -54321
+sol.reverse(x)

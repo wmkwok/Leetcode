@@ -6,4 +6,10 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        
+        return (n > 0) and ((n & (n - 1)) == 0)
+
+sol = Solution()
+test = 16
+test1 = 14
+print sol.isPowerOfTwo(test)
+print sol.isPowerOfTwo(test1)
