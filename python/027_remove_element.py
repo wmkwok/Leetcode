@@ -21,4 +21,23 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        
+        end = 0
+        for i in range(1, len(nums)):
+            if nums[end] != val:
+                end += 1
+            if i != end:
+                nums[end] = nums[i]
+
+        if end == val:
+            nums[end] = None
+        size = end + 1
+        end += 1
+        while end < len(nums):
+            nums[end] = None
+            end += 1
+        print nums
+        return size
+
+sol = Solution()
+test = [1, 1, 2, 2, 2, 2, 3, 4]
+print sol.removeElement(test, 2)
