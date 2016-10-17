@@ -7,26 +7,23 @@
 
 # Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
 
-class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        end = 0
-        for i in range(1, len(nums)):
-            if nums[i] != nums[end]:
-                end += 1
-            if i != end:
-                nums[end] = nums[i]
-        size = end + 1
-        end += 1
-        while end < len(nums):
-            nums[end] = None
-            end += 1
-        print nums
-        return size
+class Solution():
+    def __init__(self, array):
+        self.array = array
 
-sol = Solution()
-test = [1, 1, 2 ,3, 4]
-print sol.removeDuplicates(test)
+    def solve(self):
+        i = 0
+        j = 1
+        arr = self.array
+
+        while j < len(arr):
+            if arr[i] == arr[j]:
+                j += 1
+            elif arr[i] < arr[j]:
+                i += 1
+                arr[i] = arr[j]
+            else: # arr[i] > arr[j]:
+                j += 1
+
+        return i + 1
+
