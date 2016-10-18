@@ -13,19 +13,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        end = 0
-        for i in range(1, len(nums)):
-            if nums[i] != nums[end]:
-                end += 1
-            if i != end:
-                nums[end] = nums[i]
-        size = end + 1
-        end += 1
-        while end < len(nums):
-            nums[end] = None
-            end += 1
-        print nums
-        return size
+        j = 0
+        prev = None
+        for i in range(len(nums)):
+            if nums[i] != prev:
+                nums[j] = nums[i]
+                j += 1
+                prev = nums[j-1]
+        return j
 
 sol = Solution()
 test = [1, 1, 2 ,3, 4]
