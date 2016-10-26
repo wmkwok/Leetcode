@@ -8,4 +8,8 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
+        end = len(needle)-1
+        index = 0
+        hs_ptr = 0
         
+                

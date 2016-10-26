@@ -10,7 +10,6 @@ class Solution(object):
         for i in range(len(s)):
             if s[i] == '(' or s[i] == '[' or s[i] == '{':
                 openparens.append(s[i])
-                print openparens
             elif s[i] == ')':
                 if len(openparens) == 0 or openparens.pop() != '(':
                     return False
@@ -25,7 +24,9 @@ class Solution(object):
 strang = "(({{}}[]))"
 strung = "()(]{}"
 sol = Solution()
+print "Testing: %s" %(strang)   
 print sol.isValid(strang)
+print "Testing: %s" %(strung)
 print sol.isValid(strung)
 
 """

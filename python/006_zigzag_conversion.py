@@ -38,11 +38,10 @@ class Solution(object):
                 inc = 1
                 start = 0
                 end = numRows
-        print rows
         return "".join(rows)
             
 
 sol = Solution()
 s = "PAYPALISHIRING"
 numRows = 3
-sol.convert(s, numRows)
+print sol.convert(s, numRows)

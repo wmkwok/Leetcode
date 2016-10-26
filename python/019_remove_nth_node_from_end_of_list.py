@@ -17,19 +17,18 @@ class ListNode(object):
 
 class Solution(object):
     def removeNthFromEnd(self, head, n):
-        print head.val
         needle = head
         end = head
         for i in range(n-1):
             end = end.next
 
-        while end.next.next != None:
+        while end.next != None:
             needle = needle.next
             end = end.next
-
+            
         needle.next = needle.next.next
-        
-        return head.next.next.val
+
+        return head
         
         """
         :type head: ListNode

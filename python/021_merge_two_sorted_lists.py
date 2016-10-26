@@ -14,4 +14,5 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        
+        len1 = len(l1)
+        len2 = len(l2)
