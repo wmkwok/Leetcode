@@ -8,8 +8,11 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-        end = len(needle)-1
-        index = 0
-        hs_ptr = 0
-        
-                
+        for i in range(len(haystack)-len(needle)):
+            if haystack[i:i+len(needle)] == needle:
+                return i
+
+sol = Solution()
+haystack = "dsdaabcd"
+needle = "abc"
+print sol.strStr(haystack, needle)     

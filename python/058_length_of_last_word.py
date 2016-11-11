@@ -14,4 +14,10 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        prev = 0
+        if len(s) == 0:
+            return 0
         
+        for cur in s:
+            if s[cur] == ' ' and prev - cur != 1:
+                
