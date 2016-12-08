@@ -11,8 +11,8 @@ class Solution(object):
     def dup(self, l):
         answer = []
         for i in range(len(l)):
-            if l[abs(l[i])] >= 0:
-                l[abs(l[i])] = -l[abs(l[i])]
+            if l[abs(l[i])-1] >= 0:
+                l[abs(l[i])-1] = -l[abs(l[i])-1]
             else:
                 answer.append(abs(l[i]))
         return answer
