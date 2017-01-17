@@ -24,7 +24,6 @@ class Solution(object):
         while end < len(nums):
             nums[end] = None
             end += 1
-        print nums
         return size
 
 sol = Solution()
